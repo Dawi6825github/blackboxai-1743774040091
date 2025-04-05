@@ -7,9 +7,18 @@
     <meta name="description" content="Meet our team of passionate Learning Experience Designers">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles to ensure mobile menu works */
+        body.menu-open {
+            overflow: hidden;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
 </head>
 <body class="font-sans">
-    <!-- Header (consistent with other pages) -->
+    <!-- Header -->
     <header class="fixed w-full bg-white shadow-md z-10">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-400">
@@ -22,120 +31,255 @@
                 <a href="projects.html" class="text-gray-700 hover:text-blue-500">Projects</a>
                 <a href="contact.html" class="text-gray-700 hover:text-blue-500">Contact</a>
             </div>
-            <button class="md:hidden focus:outline-none">
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
                 <i class="fas fa-bars text-gray-700 text-xl"></i>
             </button>
         </nav>
     </header>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-20 pt-24 px-6 transform -translate-x-full md:hidden">
+        <div class="flex flex-col space-y-6">
+            <a href="index.html" class="text-gray-700 hover:text-blue-500 text-xl">Home</a>
+            <a href="about.html" class="text-gray-700 hover:text-blue-500 text-xl">About</a>
+            <a href="team.html" class="text-blue-500 font-medium text-xl">Team</a>
+            <a href="projects.html" class="text-gray-700 hover:text-blue-500 text-xl">Projects</a>
+            <a href="contact.html" class="text-gray-700 hover:text-blue-500 text-xl">Contact</a>
+        </div>
+        <button class="absolute top-6 right-6 text-gray-700 focus:outline-none" id="mobile-menu-close">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+    </div>
+
     <!-- Main Content -->
     <main class="pt-32 pb-16 px-4 container mx-auto">
         <h1 class="text-4xl font-bold mb-12 text-center">Meet Our Team</h1>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Team Member 1 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-                <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg" alt="Alex Morgan" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Alex Morgan</h3>
-                    <p class="text-blue-600 italic mb-3">Lead Learning Designer</p>
-                    <p class="text-gray-700 mb-4">Specializes in gamification and interactive learning experiences with 8+ years in educational technology.</p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fas fa-envelope"></i></a>
-                    </div>
+        <!-- Team member cards would go here -->
+          <!-- Team Member 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+            <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg" alt="Alex Morgan" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Alex Morgan</h3>
+                <p class="text-blue-600 italic mb-3">Lead Learning Designer</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Gamification</span>
+                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">EdTech</span>
+                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Instructional Design</span>
                 </div>
-            </div>
-
-            <!-- Team Member 2 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-                <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg" alt="Jamie Chen" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Jamie Chen</h3>
-                    <p class="text-blue-600 italic mb-3">UX for Learning Specialist</p>
-                    <p class="text-gray-700 mb-4">Focuses on creating intuitive learning interfaces that reduce cognitive load and enhance retention.</p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Team Member 3 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-                <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" alt="Taylor Williams" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Taylor Williams</h3>
-                    <p class="text-blue-600 italic mb-3">Instructional Strategist</p>
-                    <p class="text-gray-700 mb-4">Expert in curriculum design and learning assessment frameworks for corporate training programs.</p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Team Member 4 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Jordan Lee" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Jordan Lee</h3>
-                    <p class="text-blue-600 italic mb-3">Multimedia Learning Developer</p>
-                    <p class="text-gray-700 mb-4">Creates engaging video content, animations, and interactive media for digital learning.</p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Team Member 5 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-                <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg" alt="Casey Smith" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Casey Smith</h3>
-                    <p class="text-blue-600 italic mb-3">Learning Experience Researcher</p>
-                    <p class="text-gray-700 mb-4">Conducts user research and learning analytics to continuously improve our designs.</p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Team Member 6 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-                <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg" alt="Riley Johnson" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold">Riley Johnson</h3>
-                    <p class="text-blue-600 italic mb-3">Accessibility Specialist</p>
-                    <p class="text-gray-700 mb-4">Ensures all learning experiences are inclusive and accessible to diverse learners.</p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fas fa-envelope"></i></a>
-                    </div>
+                <p class="text-gray-700 mb-4">Specializes in gamification and interactive learning experiences with 8+ years in educational technology.</p>
+                <div class="flex space-x-3">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:alex@philia.com" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </div>
+
+        <!-- Team Member 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+            <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg" alt="Jamie Chen" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Jamie Chen</h3>
+                <p class="text-blue-600 italic mb-3">UX for Learning Specialist</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">UX Design</span>
+                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Cognitive Load</span>
+                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">User Research</span>
+                </div>
+                <p class="text-gray-700 mb-4">Focuses on creating intuitive learning interfaces that reduce cognitive load and enhance retention.</p>
+                <div class="flex space-x-3">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:jamie@philia.com" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+            <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" alt="Taylor Williams" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Taylor Williams</h3>
+                <p class="text-blue-600 italic mb-3">Instructional Strategist</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Curriculum Design</span>
+                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Assessment</span>
+                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Corporate Training</span>
+                </div>
+                <p class="text-gray-700 mb-4">Expert in curriculum design and learning assessment frameworks for corporate training programs.</p>
+                <div class="flex space-x-3">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:taylor@philia.com" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Jordan Lee" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Jordan Lee</h3>
+                <p class="text-blue-600 italic mb-3">Multimedia Learning Developer</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Video Production</span>
+                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Animation</span>
+                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Interactive Media</span>
+                </div>
+                <p class="text-gray-700 mb-4">Creates engaging video content, animations, and interactive media for digital learning.</p>
+                <div class="flex space-x-3">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:jordan@philia.com" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+            <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg" alt="Casey Smith" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold">Casey Smith</h3>
+                <p class="text-blue-600 italic mb-3">Learning Experience Researcher</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">User Research</span>
+                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Learning Analytics</span>
+                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Data Visualization</span>
+                </div>
+                <p class="text-gray-700 mb-4">Conducts user research and learning analytics to continuously improve our designs.</p>
+                <div class="flex space-x-3">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:casey@philia.com" 
+                       class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+                    <!-- Team Member 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg" alt="Riley Johnson" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Riley Johnson</h3>
+                            <p class="text-blue-600 italic mb-3">Accessibility Specialist</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">WCAG</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Inclusive Design</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Universal Design</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">Ensures all learning experiences are inclusive and accessible to diverse learners.</p>
+                            <div class="flex space-x-3">
+                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" 
+                                   class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:riley@philia.com" 
+                                   class="text-blue-500 hover:text-blue-700 transition-transform hover:scale-110">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+        <!-- Copy the team member content from team-old.html -->
+        
     </main>
 
-    <!-- Footer (consistent with other pages) -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
             <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin-in text-xl"></i></a>
-                <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
-                <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-discord text-xl"></i></a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="fab fa-discord text-xl"></i>
+                </a>
             </div>
             <p class="text-gray-400 text-sm">
-                © 2024 Philia (φιλία). All rights reserved.<br>
-                Made with ❤️ by Learning Experience Designers
+                © 2024 Philia (φιλία). All rights reserved.
             </p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle functionality will be added here
+        // Robust mobile menu implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const body = document.body;
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('translate-x-0');
+                body.classList.toggle('menu-open');
+            }
+
+            // Event listeners with error handling
+            try {
+                if (menuButton) menuButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleMenu();
+                });
+                
+                if (closeButton) closeButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleMenu();
+                });
+
+                if (mobileMenu) {
+                    // Close when clicking links
+                    mobileMenu.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', toggleMenu);
+                    });
+
+                    // Close when clicking outside
+                    document.addEventListener('click', function(e) {
+                        if (!mobileMenu.contains(e.target) && 
+                            e.target !== menuButton && 
+                            mobileMenu.classList.contains('translate-x-0')) {
+                            toggleMenu();
+                        }
+                    });
+                }
+
+                // Close with Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileMenu.classList.contains('translate-x-0')) {
+                        toggleMenu();
+                    }
+                });
+            } catch (error) {
+                console.error('Mobile menu error:', error);
+            }
+        });
     </script>
 </body>
 </html>
